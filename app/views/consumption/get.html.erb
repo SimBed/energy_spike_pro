@@ -1,0 +1,28 @@
+<h5>Leccy</h5>
+<div class="mb-5">
+  <%= line_chart @results_leccy %>
+</div>
+
+<% @json_response_results_leccy.each do |result| %>
+<div style ='display: flex; flex-direction: row'>
+  <div style ='margin-right: 2rem'><%= Date.parse(result['interval_start']).strftime('%d %b %y') %></div>
+  <div><%= result['consumption'] %></div>
+</div>
+<% end %>
+
+<h1><%= @alert_leccy %></h1>
+
+<h5>Gas</h5>
+<div class="mb-5">
+  <%= line_chart @results_gas %>
+</div>
+
+<% @json_response_results_gas.each do |result| %>
+<div style ='display: flex; flex-direction: row'>
+  <div style ='margin-right: 2rem'><%= Date.parse(result['interval_start']).strftime('%d %b %y') %></div>
+  <div><%= result['consumption'] %></div>
+</div>
+<% end %>
+
+<h1><%= @alert_gas %></h1>
+
